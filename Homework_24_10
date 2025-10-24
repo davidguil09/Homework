@@ -1,0 +1,29 @@
+#1
+mkdir trash
+mv ab* trash/
+
+#2
+ls -lhrt ../proteins/*.fa ../proteins/*.fasta ../nucleotides/*.fa ../nucleotides/*.fasta
+
+#3
+cat 'filename[1]'
+
+#4
+_TXT=$( find . -type f -name "*txt" | wc -l ) ; N_py=$( find . -type f -name "*py" | wc -l ) ; N_pl=$( find . -type f -name "*pl" | wc -l ) ; echo the number of txt files is $N_TXT, the number of py files is $N_py and the number of pl files is $N_pl, in total are $(( $N_TXT + $N_py + N_pl ))
+
+find . -name "*.[tp][xly]*"
+
+#5
+if [[ $F == s*fa ]]; then echo yes; fi
+
+#6
+if [[ $F == *[ao] ]]; then echo yes; fi
+
+#7
+N=$(fastafind | wc -l); if [[ $N  -ge 3 ]]; then echo lots of fastas; fi
+
+#8
+F=$(wc -l < ffile); if [[ $F  -gt 100 ]]; then echo long file; fi
+
+#9
+rep $SEQ $FILE >transcript; N=$( echo $?); if [[ $N -eq 0 ]]; then echo seq is present; fi
