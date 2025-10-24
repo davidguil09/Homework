@@ -26,4 +26,4 @@ N=$(fastafind | wc -l); if [[ $N  -ge 3 ]]; then echo lots of fastas; fi
 F=$(wc -l < ffile); if [[ $F  -gt 100 ]]; then echo long file; fi
 
 #9
-rep $SEQ $FILE >transcript; N=$( echo $?); if [[ $N -eq 0 ]]; then echo seq is present; fi
+grep $SEQ $FILE >transcript; N=$( echo $?); if [[ $N -eq 0 ]]; then echo seq is present; fi
