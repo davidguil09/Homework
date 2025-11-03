@@ -1,0 +1,82 @@
+#1
+ln -s ~/Escritorio/ALG/github/Homework/Homework_31_10 Homeworklink
+
+#2
+THis happens:
+=== File *txt report ===
+*txt is empty
+
+for i in *txt; do
+	if [[ $i == "*txt" ]]; then
+		echo NO TXT FILES
+	else
+		echo === File $i report === 
+		if [[ -s $i ]]; then
+    			echo It has $(cat $i | wc -l) lines
+    			echo Long information:
+    			ls -lh $i
+    			echo
+    			echo First and last line:
+    			head -n1 $i
+    			echo ...
+    			tail -n1 $i
+  		else
+   			echo $i is empty
+		fi
+	fi
+done
+
+#3
+for i in *txt */*txt; do
+	if [[ $i == "*txt" ]]; then
+		echo NO TXT FILES
+	else
+		echo === File $i report === 
+		if [[ -s $i ]]; then
+    			echo It has $(cat $i | wc -l) lines
+    			echo Long information:
+    			ls -lh $i
+    			echo
+    			echo First and last line:
+    			head -n1 $i
+    			echo ...
+    			tail -n1 $i
+    			echo ""
+  		else
+   			echo $i is empty
+		fi
+	fi
+done
+
+#4
+for i in $(find ./ -name "*txt"); do
+	if [[ $i == "*txt" ]]; then
+		echo NO TXT FILES
+	else
+		echo === File $i report === 
+		if [[ -s $i ]]; then
+    			echo It has $(cat $i | wc -l) lines
+    			echo Long information:
+    			ls -lh $i
+    			echo
+    			echo First and last line:
+    			head -n1 $i
+    			echo ...
+    			tail -n1 $i
+    			echo ""
+  		else
+   			echo $i is empty
+		fi
+	fi
+done
+
+#5
+head -n1 batch.1.csv; for f in batch.{1..10}.csv; do echo echo ""; echo ""; echo "$f"; tail -n1 "$f"; done
+
+
+
+
+
+
+
+
